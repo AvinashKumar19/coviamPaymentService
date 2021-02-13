@@ -70,6 +70,7 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setPaymentStatus(paymentStatus);
         Transaction updatedTransaction = save(transaction);
 
+//        System.out.println("");
         UpdateBookingRequestDTO updateBookingRequestDTO = new UpdateBookingRequestDTO.Builder().superPnr(updatedTransaction.getSuperPnr()).paymentid(updatedTransaction.getId()).status(updatedTransaction.getPaymentStatus()).build();
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", MediaType.APPLICATION_JSON_VALUE);
